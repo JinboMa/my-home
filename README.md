@@ -28,3 +28,11 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Documents
+
+[docs for vue-class-component](https://github.com/vuejs/vue-class-component)
+
+[docs for vue-property-decorator](https://github.com/kaorun343/vue-property-decorator)
+
+[docs for mockjs](http://mockjs.com/)

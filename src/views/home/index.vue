@@ -1,7 +1,6 @@
 <template>
-  <div class="app">
-    This is App.
-    <router-view/>
+  <div>
+    This is home.
   </div>
 </template>
 
@@ -9,7 +8,7 @@
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component
-export default class App extends Vue {}
+export default class MyComponent extends Vue {}
 </script>
 
 <style>

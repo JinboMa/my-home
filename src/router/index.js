@@ -1,15 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import common from './common'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'Hello',
-      component: HelloWorld
-    }
+    ...common
   ]
 })
