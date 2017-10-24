@@ -2,8 +2,9 @@ import home from '@/views/home'
 
 export default [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
-    component: home
+    component: home,
+    alias: '/home'
   }
 ]
