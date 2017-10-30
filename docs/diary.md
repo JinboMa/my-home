@@ -1,0 +1,28 @@
+# my diary
+
+## 2017.10.30
+
+1. Vue: `activated`
+
+- type: `Function`
+
+- Details:
+
+called when a kept-alive component is activated.
+
+- example:
+
+```javascript
+{
+  activated () {
+    // something you want to do when enter this component.
+    this.initData()
+  }
+
+  methods: {
+    initData () {
+      // init this component to do.
+    }
+  }
+}
+```
