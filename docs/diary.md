@@ -26,3 +26,20 @@ called when a kept-alive component is activated.
   }
 }
 ```
+
+## 2017.10.31
+
+1. JS: `async`
+
+- description: when you want to get something with ajax, maybe you can do this way.
+
+- example:
+
+```javascript
+async function init () {
+  // getData is a ajax function
+  let res = await getData()
+  // or you want to get data
+  let data = (await getData()).data
+}
+```
