@@ -3,7 +3,9 @@
   --base-color: #555555;
   --footer-color: #87CEFF;
   --header-color: #ccc;
+  --white: #fff;
   /* size */
+  --base-size: 10px;
   --header-height: 60px;
   --footer-height: 60px;
 }
