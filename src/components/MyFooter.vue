@@ -1,5 +1,5 @@
 <template>
-  <footer class="mj-footer">
+  <footer class="mj-footer" v-show="false">
     this is footer.
   </footer>
 </template>
@@ -14,8 +14,12 @@ export default class MyFooter extends Vue {
 
 <style scoped>
 .mj-footer {
+  --footer-height: calc(var(--size)*6);
+}
+
+.mj-footer {
   height: var(--footer-height);
-  background-color: var(--footer-color);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
 }

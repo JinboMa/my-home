@@ -22,6 +22,9 @@ import MyFooter from '@/components/MyFooter'
   components: { MyHeader, MyMain, MyFooter }
 })
 export default class App extends Vue {
+  created () {
+    console.log(this.$api)
+  }
 }
 </script>
 

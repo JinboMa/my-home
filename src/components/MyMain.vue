@@ -14,5 +14,6 @@ export default class MyMain extends Vue {}
 <style scoped>
 .mj-main {
   flex: 1;
+  overflow: auto;
 }
 </style>

@@ -1,11 +1,10 @@
 :root {
   /* color */
-  --base-color: #555555;
-  --footer-color: #87CEFF;
-  --header-color: #ccc;
+  --color: #555555;
   --white: #fff;
+  --gray: #ccc;
+  --blue: #87CEFF;
   /* size */
-  --base-size: 10px;
-  --header-height: 60px;
-  --footer-height: 60px;
+  --size: 10px;
+  --scroll-width: 4px;
 }

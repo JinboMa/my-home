@@ -6,7 +6,19 @@
 .app {
   height: 100vh;
   width: 100%;
-  background-color: var(--base-color);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: var(--scroll-width);
+  background-color: transparent;
+  border-radius: calc(var(--scroll-width) / 2);
+}
+
+::-webkit-scrollbar-thumb {
+  width: var(--scroll-width);
+  background-color: var(--gray);
+  border-radius: calc(var(--scroll-width) / 2);
 }
