@@ -6,6 +6,7 @@ import Mock from './mock'
 // import css
 import './style/var.css'
 import './style/style.css'
+import './style/keyframes.css'
 
 // if node environment is development, and add the mock data.
 process.env.NODE_ENV === 'development' && Mock()
