@@ -79,3 +79,29 @@ console.log(test)
 function test () { console.log('test') }
 // ƒ test() { console.log('test') }
 ```
+
+## 2017.11.09
+
+1. some commands in GIT
+
+`git branch` view this project local branches.
+
+`git branch -r` view this project remote branches.
+
+`git branch -d [name]` delete the local branch that name is the name.
+
+`git branch -D [name]` Forced to delete the local branch that name is the name.
+
+`git push origin [name]` push the local branch code to the remote branch.
+
+`git push origin :[name]` delete the remote branch.
+
+when someone else add a new branch, you can't find the new branch with the command `git branch -r`
+
+now, you can use `git remote update` to update branch, then you can find the new branch with the command `git branch -r`
+
+Similarly, when someone else delete a branch, you can't find it too.
+
+now, you can use `git remote prune origin` to find the branch is deleted.
+
+use command `git remote show origin` You can check the remote address, remote branch, as well as the corresponding relationship between the local branch and other information.
