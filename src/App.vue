@@ -22,15 +22,14 @@ import MyFooter from '@/components/MyFooter'
   components: { MyHeader, MyMain, MyFooter }
 })
 export default class App extends Vue {
-  created () {
-    console.log(this.$api)
-  }
 }
 </script>
 
 <style scoped>
-.mj-footer-hover {
-  height: 10px;
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
 </style>
 

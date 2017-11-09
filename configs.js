@@ -1,7 +1,7 @@
 // config for development
 const config = {
   port: 8888,
-  proxy: true,
+  proxy: false,
   proxyTables: [
     {
       ip: 'localhost',
