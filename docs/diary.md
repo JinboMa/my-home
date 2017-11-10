@@ -105,3 +105,39 @@ Similarly, when someone else delete a branch, you can't find it too.
 now, you can use `git remote prune origin` to find the branch is deleted.
 
 use command `git remote show origin` You can check the remote address, remote branch, as well as the corresponding relationship between the local branch and other information.
+
+## 2017.11.10
+
+1. the ftp-sync in vscode
+
+```javascript
+{
+  "remotePath": "/path/path/", // path
+  "host": "", // ip
+  "username": "", // root
+  "password": "", // your password
+  "port": 22, // port
+  "secure": false,
+  "protocol": "sftp", // sftp
+  "uploadOnSave": false,
+  "passive": false,
+  "debug": false,
+  "privateKeyPath": null,
+  "passphrase": null,
+  "ignore": [
+      "\\.vscode",
+      "\\.git",
+      "\\.DS_Store",
+      "\\node_modules"
+  ],
+  "generatedFiles": {
+      "uploadOnSave": false,
+      "extensionsToInclude": [],
+      "path": ""
+  }
+}
+```
+
+use `shift + ctrl + p`
+
+keydown `ftp` to config or push your file.
