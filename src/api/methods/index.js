@@ -6,6 +6,13 @@ const methods = {
       url: '/test',
       method: 'get'
     })
+  },
+
+  login () {
+    return fetch({
+      url: '/login',
+      method: 'get'
+    })
   }
 }
 
