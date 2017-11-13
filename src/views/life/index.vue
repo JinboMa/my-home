@@ -1,5 +1,7 @@
 <template>
+  <div class="my-life">
 
+  </div>
 </template>
 
 <script>

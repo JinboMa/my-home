@@ -13,7 +13,8 @@ import { Vue, Component } from '@/utils/vue-class'
 export default class MyHeader extends Vue {
   headers = [
     { name: 'home', path: '/home' },
-    { name: 'blog', path: '/blog' },
+    { name: 'life', path: '/life' },
+    { name: 'work', path: '/work' },
     { name: 'login', path: '/login' },
     { name: 'register', path: '/register' }
   ]
