@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import methods from './methods'
+import * as methods from './methods'
 
 let api = {}
 api.install = function (Vue, options) {

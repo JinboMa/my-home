@@ -1,5 +1,5 @@
 <template>
-  <div class="mj-home">
+  <div class="my-home">
 
     <!-- to work -->
     <router-link class="to-work" to="/work">work</router-link>
@@ -21,12 +21,12 @@ export default class Home extends Vue {}
 </script>
 
 <style scoped>
-.mj-home {
+.my-home {
   --btn-size: calc(var(--size)*12);
   --line-height: var(--size);
 }
 
-.mj-home {
+.my-home {
   position: absolute;
   display: flex;
   flex-direction: column;

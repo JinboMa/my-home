@@ -1,5 +1,5 @@
 <template>
-  <main class="mj-main">
+  <main class="my-main">
     <slot></slot>
   </main>
 </template>
@@ -12,7 +12,7 @@ export default class MyMain extends Vue {}
 </script>
 
 <style scoped>
-.mj-main {
+.my-main {
   flex: 1;
   overflow: auto;
 }
