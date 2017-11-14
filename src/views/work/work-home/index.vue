@@ -1,6 +1,6 @@
 <template>
-  <div class="work">
-    <router-view></router-view>
+  <div class="work-home">
+    work home.
   </div>
 </template>
 
@@ -8,5 +8,5 @@
 import { Vue, Component } from '@/utils/vue-class'
 
 @Component
-export default class Work extends Vue {}
+export default class WorkHome extends Vue {}
 </script>
