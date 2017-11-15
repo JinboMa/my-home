@@ -26,4 +26,12 @@ let register = function (data) {
   })
 }
 
-export { test, login, register }
+let getBlogs = function (params) {
+  return fetch({
+    url: 'blogs',
+    method: 'get',
+    params
+  })
+}
+
+export { test, login, register, getBlogs }

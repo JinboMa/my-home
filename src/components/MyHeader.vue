@@ -15,6 +15,7 @@ export default class MyHeader extends Vue {
     { name: 'home', path: '/home' },
     { name: 'life', path: '/life' },
     { name: 'work', path: '/work' },
+    { name: 'blog', path: '/blog' },
     { name: 'login', path: '/login' },
     { name: 'register', path: '/register' }
   ]

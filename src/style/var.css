@@ -7,4 +7,6 @@
   /* size */
   --size: 10px;
   --scroll-width: 4px;
+  --max-size: 900px;
+  --min-size: 300px;
 }

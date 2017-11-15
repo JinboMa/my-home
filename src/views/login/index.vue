@@ -3,7 +3,7 @@
 
     <form>
 
-      <input type="text" v-model="username" placeholder="用户名">
+      <input type="text" v-model="username" placeholder="用户名/手机号">
 
       <input type="password" v-model="password" placeholder="密码">
 
