@@ -10,7 +10,7 @@ let test = function () {
 
 let login = function (data) {
   return fetch({
-    url: 'login',
+    url: 'user/login',
     method: 'post',
     type: 'formData',
     data
@@ -28,10 +28,18 @@ let register = function (data) {
 
 let getBlogs = function (params) {
   return fetch({
-    url: 'blogs',
+    url: 'blog/list',
     method: 'get',
     params
   })
 }
 
-export { test, login, register, getBlogs }
+let getBlog = function (params) {
+  return fetch({
+    url: 'blog',
+    method: 'get',
+    params
+  })
+}
+
+export { test, login, register, getBlogs, getBlog }

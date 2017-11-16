@@ -19,18 +19,24 @@ import { Vue, Component } from '@/utils/vue-class'
 
 @Component
 export default class MyLogin extends Vue {
-  username = ''
+  username = '15858284223'
   password = ''
 
   get form () {
     return {
       username: this.username,
-      password: this.password
+      password: this.password,
+      source: 'WEB'
     }
   }
 
   login () {
     this.$api.login(this.form)
+      .then(res => {
+        console.log(res)
+        alert('login success')
+        this.$router.push('/blog')
+      })
   }
 }
 </script>

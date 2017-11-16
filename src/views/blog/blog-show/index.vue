@@ -7,6 +7,18 @@
 <script>
 import { Vue, Component } from '@/utils/vue-class'
 
-@Component
-export default class BlogShow extends Vue {}
+@Component({
+  props: {
+    blogId: null
+  }
+})
+export default class BlogShow extends Vue {
+  created () {
+    this.initData()
+  }
+
+  initData () {
+    this.$api.getBlog({id: this.blogId})
+  }
+}
 </script>

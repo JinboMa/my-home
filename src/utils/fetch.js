@@ -1,13 +1,15 @@
 import { baseURL } from '@/config'
 import axios from 'axios'
-import { interceptors, errors } from './interceptor'
+import requestFn from './requestFn'
+import responseFn from './responseFn'
 
 export default async function fetch (option) {
   let instance = axios.create({
     baseURL
   })
-  instance.interceptors.request.use(interceptors, errors)
+  instance.interceptors.request.use(requestFn.interceptors, requestFn.errors)
+  instance.interceptors.response.use(responseFn.interceptors, responseFn.errors)
   let res = await instance.request(option)
 
-  return res.data
+  return res
 }

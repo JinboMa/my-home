@@ -1,9 +1,9 @@
 import Mock from 'mockjs'
 import mockTip from './mock-tip'
 
-mockTip()
-
 export default function () {
+  mockTip()
+
   Mock.mock(/login$/, 'post', {
     message: 'login success',
     code: 'SUCCESS'

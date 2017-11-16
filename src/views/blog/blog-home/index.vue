@@ -26,8 +26,11 @@ export default class BlogHome extends Vue {
   blogList = []
 
   async getBlogs () {
-    let res = await this.$api.getBlogs()
-    this.blogList = res.data
+    this.blogList = await this.$api.getBlogs({
+      key_word: null,
+      page: 0,
+      page_size: 10
+    })
   }
 
   toBlogShow (id) {

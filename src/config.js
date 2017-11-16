@@ -1,1 +1,1 @@
-export const baseURL = window.location.origin + '/rest/v1'
+export const baseURL = window.location.origin + '/rest'
