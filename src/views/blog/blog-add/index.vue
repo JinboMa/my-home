@@ -19,8 +19,9 @@ import { Vue, Component } from '@/utils/vue-class'
 export default class BlogAdd extends Vue {
   form = { title: '', content: '' }
 
-  addBlog () {
-    this.$api.addBlog(this.form)
+  async addBlog () {
+    await this.$api.addBlog(this.form)
+    alert('add blog success')
   }
 }
 </script>
