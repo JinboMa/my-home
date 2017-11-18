@@ -22,6 +22,7 @@ export default class BlogAdd extends Vue {
   async addBlog () {
     await this.$api.addBlog(this.form)
     alert('add blog success')
+    this.$router.push('/blog')
   }
 }
 </script>
