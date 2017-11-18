@@ -1,6 +1,10 @@
 <template>
   <div class="blog-show">
-    blog show.
+
+    <h1 class="blog-title">{{ blog.title }}</h1>
+
+    <div class="blog-content">{{ blog.content }}</div>
+
   </div>
 </template>
 
@@ -13,12 +17,14 @@ import { Vue, Component } from '@/utils/vue-class'
   }
 })
 export default class BlogShow extends Vue {
+  blog = {}
+
   created () {
     this.initData()
   }
 
-  initData () {
-    this.$api.getBlog({id: this.blogId})
+  async initData () {
+    this.blog = await this.$api.getBlog({id: this.blogId})
   }
 }
 </script>

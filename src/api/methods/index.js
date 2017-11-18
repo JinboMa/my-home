@@ -1,14 +1,14 @@
 import fetch from '@/utils/fetch'
 // transformRequest & transformResponse
 
-let test = function () {
+export let test = function () {
   return fetch({
     url: 'test',
     method: 'get'
   })
 }
 
-let login = function (data) {
+export let login = function (data) {
   return fetch({
     url: 'user/login',
     method: 'post',
@@ -17,7 +17,7 @@ let login = function (data) {
   })
 }
 
-let register = function (data) {
+export let register = function (data) {
   return fetch({
     url: 'register',
     method: 'post',
@@ -26,7 +26,7 @@ let register = function (data) {
   })
 }
 
-let getBlogs = function (params) {
+export let getBlogs = function (params) {
   return fetch({
     url: 'blog/list',
     method: 'get',
@@ -34,7 +34,7 @@ let getBlogs = function (params) {
   })
 }
 
-let getBlog = function (params) {
+export let getBlog = function (params) {
   return fetch({
     url: 'blog',
     method: 'get',
@@ -42,4 +42,10 @@ let getBlog = function (params) {
   })
 }
 
-export { test, login, register, getBlogs, getBlog }
+export let addBlog = function (data) {
+  return fetch({
+    url: 'blog',
+    method: 'post',
+    data
+  })
+}

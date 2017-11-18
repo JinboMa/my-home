@@ -1,9 +1,13 @@
 <template>
   <div class="blog-home">
 
+    <input type="text" class="search-blog" v-model="searchWord">
+
+    <input type="button" class="search-button" @click="getBlogs(searchWord)" value="搜索">
+
     <div class="blog-item" v-for="blog in blogList" :key="blog.id" @click="toBlogShow(blog.id)">
 
-      <div class="blog-title">{{ blog.title }}</div>
+      <h1 class="blog-title">{{ blog.title }}</h1>
 
       <span class="blog-author" @click.stop="toUser(blog.authorId)">{{ blog.author }}</span>
 
@@ -24,10 +28,11 @@ import { Vue, Component } from '@/utils/vue-class'
 @Component
 export default class BlogHome extends Vue {
   blogList = []
+  searchWord = null
 
-  async getBlogs () {
+  async getBlogs (searchWord) {
     this.blogList = await this.$api.getBlogs({
-      key_word: null,
+      key_word: searchWord,
       page: 0,
       page_size: 10
     })

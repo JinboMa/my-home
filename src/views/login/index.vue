@@ -16,10 +16,13 @@
 
 <script>
 import { Vue, Component } from '@/utils/vue-class'
+import { mapActions } from 'vuex'
 
-@Component
+@Component({
+  methods: { ...mapActions(['login_todo']) }
+})
 export default class MyLogin extends Vue {
-  username = '15858284223'
+  username = ''
   password = ''
 
   get form () {
@@ -30,13 +33,10 @@ export default class MyLogin extends Vue {
     }
   }
 
-  login () {
-    this.$api.login(this.form)
-      .then(res => {
-        console.log(res)
-        alert('login success')
-        this.$router.push('/blog')
-      })
+  async login () {
+    await this.login_todo(this.form)
+    alert('login success')
+    this.$router.push('/blog')
   }
 }
 </script>
