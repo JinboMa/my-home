@@ -3,9 +3,9 @@
 
     <div class="blog-add-tip">添加博客：</div>
 
-    <input type="text" class="blog-title" v-model="form.title">
+    <input type="text" class="blog-title" v-model="form.title" placeholder="标题">
 
-    <textarea type="text" class="blog-content" v-model="form.content"></textarea>
+    <textarea type="text" class="blog-content" v-model="form.content" placeholder="正文..."></textarea>
 
     <input type="button" @click="addBlog" value="提交">
 
@@ -26,3 +26,9 @@ export default class BlogAdd extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.blog-title {
+  display: block;
+}
+</style>

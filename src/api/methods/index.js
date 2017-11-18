@@ -49,3 +49,11 @@ export let addBlog = function (data) {
     data
   })
 }
+
+export let editBlog = function (data) {
+  return fetch({
+    url: 'blog',
+    method: 'put',
+    data
+  })
+}

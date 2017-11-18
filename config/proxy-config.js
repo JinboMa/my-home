@@ -6,11 +6,11 @@ let proxyConfig = {}
 let proxyTable = {}
 
 tables.forEach(table => {
-  proxyTable[table.url] = {
-    target: `http://${table.ip}:${table.port}${table.url}`,
+  proxyTable[table.path] = {
+    target: `http://${table.ip}:${table.port}${table.path}`,
     changeOrigin: true,
     pathRewrite: {
-      ['^' + table.url]: ''
+      ['^' + table.path]: ''
     }
   }
 })

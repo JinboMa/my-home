@@ -5,6 +5,8 @@
 
     <div class="blog-content">{{ blog.content }}</div>
 
+    <button @click="toEditBlog">编辑</button>
+
   </div>
 </template>
 
@@ -24,7 +26,13 @@ export default class BlogShow extends Vue {
   }
 
   async initData () {
-    this.blog = await this.$api.getBlog({id: this.blogId})
+    this.blog = await this.$api.getBlog({blog_id: this.blogId})
+  }
+
+  toEditBlog () {
+    let blogId = this.blogId
+
+    this.$router.push(`/blog/${blogId}/edit`)
   }
 }
 </script>
