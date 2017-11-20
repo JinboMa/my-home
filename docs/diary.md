@@ -141,3 +141,5 @@ use command `git remote show origin` You can check the remote address, remote br
 use `shift + ctrl + p`
 
 keydown `ftp` to config or push your file.
+
+# 2017.11.20
