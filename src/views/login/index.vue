@@ -1,13 +1,23 @@
 <template>
-  <div class="my-login">
+  <div class="my-login my-content">
 
-    <el-form>
+    <el-form :label-position="labelPosition" :model="form">
 
-      <el-input type="text" v-model="username" placeholder="用户名/手机号"></el-input>
+      <el-form-item>
+        <h1 class="my-title">登录</h1>
+      </el-form-item>
 
-      <el-input type="password" v-model="password" placeholder="密码"></el-input>
+      <el-form-item>
+        <el-input v-model="form.username" placeholder="用户名/手机号"></el-input>
+      </el-form-item>
 
-      <el-button @click="login">登录</el-button>
+      <el-form-item>
+        <el-input v-model="form.password" placeholder="密码" type="password"></el-input>
+      </el-form-item>
+
+      <el-form-item>
+        <el-button @click="login" class="pull-right">登录</el-button>
+      </el-form-item>
 
     </el-form>
 
@@ -22,15 +32,13 @@ import { mapActions } from 'vuex'
   methods: { ...mapActions(['login_todo']) }
 })
 export default class MyLogin extends Vue {
-  username = ''
-  password = ''
-
-  get form () {
-    return {
-      username: this.username,
-      password: this.password,
-      source: 'WEB'
-    }
+  // style config
+  labelPosition = 'right'
+  // data
+  form = {
+    username: '',
+    password: '',
+    source: 'WEB'
   }
 
   async login () {
@@ -40,3 +48,10 @@ export default class MyLogin extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.my-login {
+  width: var(--min-size);
+  text-align: center;
+}
+</style>

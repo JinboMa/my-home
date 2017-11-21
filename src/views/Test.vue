@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    test
+    <el-button>test</el-button>
   </div>
 </template>
 
@@ -9,8 +9,6 @@ import { Vue, Component } from '@/utils/vue-class'
 
 @Component
 export default class Test extends Vue {
-  created () {
-    this.$api.test()
-  }
+
 }
 </script>

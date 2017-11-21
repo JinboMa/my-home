@@ -4,9 +4,15 @@
   --white: #fff;
   --gray: #ccc;
   --blue: #87CEFF;
+  --font-color: #2D2F33;
+  --bg-color: #f3f3f3;
   /* size */
-  --size: 10px;
-  --scroll-width: 4px;
-  --max-size: 900px;
+  --size: 12px;
+  --scroll-width: 6px;
+  --max-size: 700px;
   --min-size: 300px;
+  --title-size: 18px;
+  --big-size: 28px;
+  --font-size: 14px;
+  --input-width: 300px;
 }

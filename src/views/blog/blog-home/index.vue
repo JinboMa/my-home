@@ -1,19 +1,23 @@
 <template>
   <div class="blog-home my-content">
 
-    <input type="text" class="search-blog" v-model="searchWord">
+    <div class="my-card">
 
-    <input type="button" class="search-button" @click="getBlogs(searchWord)" value="搜索">
+      <el-input class="search-blog pull-right" v-model="searchWord" placeholder="搜索" size="small">
+        <el-button slot="append" icon="el-icon-search" @click="getBlogs(searchWord)"></el-button>
+      </el-input>
 
-    <div class="blog-item" v-for="blog in blogList" :key="blog.id" @click="toBlogShow(blog.id)">
+    </div>
 
-      <h1 class="blog-title">{{ blog.title }}</h1>
+    <div class="blog-item my-card" v-for="blog in blogList" :key="blog.id">
 
-      <span class="blog-author" @click.stop="toUser(blog.authorId)">{{ blog.author }}</span>
-
-      <span class="blog-createTime">{{ blog.createTime }}</span>
+      <el-button class="blog-author" @click.stop="toUser(blog.authorId)" type="text">{{ blog.author }}</el-button>
 
       <span class="blog-changeTime">{{ blog.changeTime }}</span>
+
+      <h1 class="my-title link-text" @click="toBlogShow(blog.id)">{{ blog.title }}</h1>
+
+      <!-- <span class="blog-createTime">{{ blog.createTime }}</span> -->
 
       <div class="blog-description">{{ blog.description }}</div>
 
@@ -54,8 +58,16 @@ export default class BlogHome extends Vue {
 
 <style scoped>
 .blog-item {
-  margin: calc(var(--size)*2);
-  border: 1px solid var(--color);
-  cursor: pointer;
+  margin: calc(var(--size)*2) 0;
+  transition: box-shadow 0.8s;
+}
+
+.search-blog {
+  width: var(--input-width);
+}
+
+.blog-createTime,
+.blog-changeTime {
+  color: var(--gray);
 }
 </style>

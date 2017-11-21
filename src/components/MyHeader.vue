@@ -12,10 +12,10 @@ import { Vue, Component } from '@/utils/vue-class'
 @Component
 export default class MyHeader extends Vue {
   headers = [
-    { name: 'home', path: '/home' },
-    { name: 'blog', path: '/blog' },
-    { name: 'add-blog', path: '/blog/add' },
-    { name: 'login', path: '/login' }
+    { name: '首页', path: '/home' },
+    { name: '博客', path: '/blog' },
+    { name: '新建博客', path: '/blog/add' },
+    { name: '登录', path: '/login' }
     // { name: 'register', path: '/register' }
   ]
 }
@@ -29,7 +29,8 @@ export default class MyHeader extends Vue {
 
 .my-header {
   height: var(--header-height);
-  background-color: transparent;
+  background-color: var(--white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
 }
 
