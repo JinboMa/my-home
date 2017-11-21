@@ -26,3 +26,9 @@ a {
   background-color: var(--gray);
   border-radius: calc(var(--scroll-width) / 2);
 }
+
+.my-content {
+  max-width: var(--max-size);
+  min-width: var(--min-size);
+  margin: var(--size) auto;
+}

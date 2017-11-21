@@ -1,7 +1,7 @@
-import work from '@/views/work'
-import WorkHome from '@/views/work/work-home'
-import WorkShow from '@/views/work/work-show'
-import MyWork from '@/views/work/my-work'
+const work = () => import('@/views/work')
+const WorkHome = () => import('@/views/work/work-home')
+const WorkShow = () => import('@/views/work/work-show')
+const MyWork = () => import('@/views/work/my-work')
 
 export default [
   {

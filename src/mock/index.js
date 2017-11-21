@@ -6,12 +6,15 @@ export default function () {
 
   Mock.mock(/login$/, 'post', {
     message: 'login success',
-    code: 'SUCCESS'
+    code: 'SUCCESS',
+    result: true,
+    data: { token: 'HSHJFjksgbfjagSA' }
   })
 
-  Mock.mock(/blogs/, 'get', {
+  Mock.mock(/blog\/list/, 'get', {
     message: 'get blogs success',
     code: 'SUCCESS',
+    result: true,
     'data|5-20': [
       {
         'id|+1': 1,

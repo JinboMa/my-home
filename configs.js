@@ -1,4 +1,4 @@
-let proxy = true
+let proxy = false
 let port = 8888
 let url = ['47.52.243.117', '8000']
 let paths = ['/rest']

@@ -1,9 +1,9 @@
-import Blog from '@/views/blog'
-import BlogHome from '@/views/blog/blog-home'
-import BlogShow from '@/views/blog/blog-show'
-import BlogAdd from '@/views/blog/blog-add'
-import BlogEdit from '@/views/blog/blog-edit'
-import MyBlog from '@/views/blog/my-blog'
+const Blog = () => import('@/views/blog')
+const BlogHome = () => import('@/views/blog/blog-home')
+const BlogShow = () => import('@/views/blog/blog-show')
+const BlogAdd = () => import('@/views/blog/blog-add')
+const BlogEdit = () => import('@/views/blog/blog-edit')
+const MyBlog = () => import('@/views/blog/my-blog')
 
 export default [
   {

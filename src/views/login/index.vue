@@ -1,15 +1,15 @@
 <template>
   <div class="my-login">
 
-    <form>
+    <el-form>
 
-      <input type="text" v-model="username" placeholder="用户名/手机号">
+      <el-input type="text" v-model="username" placeholder="用户名/手机号"></el-input>
 
-      <input type="password" v-model="password" placeholder="密码">
+      <el-input type="password" v-model="password" placeholder="密码"></el-input>
 
-      <input type="button" value="登录" @click="login">
+      <el-button @click="login">登录</el-button>
 
-    </form>
+    </el-form>
 
   </div>
 </template>

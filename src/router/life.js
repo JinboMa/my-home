@@ -1,4 +1,4 @@
-import life from '@/views/life'
+const life = () => import('@/views/life')
 
 export default [
   {

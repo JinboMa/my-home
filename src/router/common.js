@@ -1,7 +1,7 @@
 import home from '@/views/home'
-import Test from '@/views/Test'
-import login from '@/views/login'
-import register from '@/views/register'
+const Test = () => import('@/views/Test')
+const login = () => import('@/views/login')
+const register = () => import('@/views/register')
 
 export default [
   {

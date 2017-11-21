@@ -15,7 +15,6 @@ export default class MyMain extends Vue {}
 .my-main {
   flex: 1;
   overflow: auto;
-  width: var(--max-size);
-  margin: 0 auto;
+  width: 100%;
 }
 </style>

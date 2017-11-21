@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-home">
+  <div class="blog-home my-content">
 
     <input type="text" class="search-blog" v-model="searchWord">
 
@@ -53,12 +53,6 @@ export default class BlogHome extends Vue {
 </script>
 
 <style scoped>
-.blog-home {
-  max-width: var(--max-size);
-  min-width: var(--min-size);
-  margin: var(--size) auto;
-}
-
 .blog-item {
   margin: calc(var(--size)*2);
   border: 1px solid var(--color);
