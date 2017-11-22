@@ -142,4 +142,35 @@ use `shift + ctrl + p`
 
 keydown `ftp` to config or push your file.
 
-# 2017.11.20
+# 2017.11.22
+
+1. dynamic add js files
+
+```javascript
+let addScript = function (files, index = 0, callback) {
+  let baseUrl = './site/'
+  let head = document.getElementsByTagName('head')[0]
+  let script = document.createElement('script')
+  script.type = 'text/javascript'
+  script.src = baseUrl + files[index]
+  head.appendChild(script)
+  script.onload = script.onreadystatechange = function () {
+    if (!this.readyState || this.readyState === 'loaded' || this.readyState === 'complete') {
+      script.onload = script.onreadystatechange = null
+      if (files.length > index + 1) {
+        addScript(files, ++index, callback)
+      } else {
+        callback()
+      }
+    }
+  }
+}
+
+export default function importFile (callback) {
+  let files = [
+    'src1',
+    'src2'
+  ]
+  addScript(files, 0, callback)
+}
+```
