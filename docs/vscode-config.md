@@ -1,6 +1,6 @@
-# vscode user-setting
+## vscode user-setting
 
-step: file -> preference -> setting
+step: vscode -> file -> preference -> setting
 
 ```json
 "editor.tabSize": 2,
@@ -25,3 +25,17 @@ step: file -> preference -> setting
 "editor.formatOnSave": true,
 "eslint.autoFixOnSave": true
 ```
+
+## add mock
+
+step:
+
+1. git clone this project
+
+2. `npm install` install project dependent
+
+3. open /configs.js change the first line code `let proxy = false`
+
+4. `npm run dev` start project development server
+
+5. open /src/mock/index.js
