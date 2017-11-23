@@ -1,13 +1,13 @@
 <template>
-  <div class="blog-add">
+  <div class="blog-add my-content">
 
-    <div class="blog-add-tip">添加博客：</div>
+    <div class="is-size-4">添加博客：</div>
 
-    <input type="text" class="blog-title" v-model="form.title" placeholder="标题">
+    <my-input type="text" class="blog-title" v-model="form.title" placeholder="标题"></my-input>
 
-    <textarea type="text" class="blog-content" v-model="form.content" placeholder="正文..."></textarea>
+    <my-textarea type="text" class="blog-content" v-model="form.content" placeholder="正文..." :rows="10"></my-textarea>
 
-    <input type="button" @click="addBlog" value="提交">
+    <my-button type="button pull-right" @click="addBlog">提交</my-button>
 
   </div>
 </template>
@@ -28,7 +28,5 @@ export default class BlogAdd extends Vue {
 </script>
 
 <style scoped>
-.blog-title {
-  display: block;
-}
+
 </style>

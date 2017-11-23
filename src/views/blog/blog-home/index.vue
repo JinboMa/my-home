@@ -3,19 +3,18 @@
 
     <div class="my-card">
 
-      <el-input class="search-blog pull-right" v-model="searchWord" placeholder="搜索" size="small">
-        <el-button slot="append" icon="el-icon-search" @click="getBlogs(searchWord)"></el-button>
-      </el-input>
+      <my-button class="pull-right" @click="getBlogs(searchWord)" size="small">搜索</my-button>
+      <my-input class="search-blog pull-right" v-model="searchWord" size="small"></my-input>
 
     </div>
 
     <div class="blog-item my-card" v-for="blog in blogList" :key="blog.id">
 
-      <el-button class="blog-author" @click.stop="toUser(blog.authorId)" type="text">{{ blog.author }}</el-button>
+      <a class="blog-author" @click.stop="toUser(blog.authorId)" type="text">{{ blog.author }}</a>
 
       <span class="blog-changeTime">{{ blog.changeTime }}</span>
 
-      <h1 class="my-title link-text" @click="toBlogShow(blog.id)">{{ blog.title }}</h1>
+      <h1 class="is-size-4 link-text" @click="toBlogShow(blog.id)">{{ blog.title }}</h1>
 
       <!-- <span class="blog-createTime">{{ blog.createTime }}</span> -->
 
@@ -64,6 +63,7 @@ export default class BlogHome extends Vue {
 
 .search-blog {
   width: var(--input-width);
+  margin-right: var(--size);
 }
 
 .blog-createTime,

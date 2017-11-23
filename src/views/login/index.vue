@@ -1,25 +1,15 @@
 <template>
   <div class="my-login my-content">
 
-    <el-form :label-position="labelPosition" :model="form">
+    <div>
 
-      <el-form-item>
-        <h1 class="my-title">登录</h1>
-      </el-form-item>
+      <my-input v-model="form.username" label="用户名"></my-input>
 
-      <el-form-item>
-        <el-input v-model="form.username" placeholder="用户名/手机号"></el-input>
-      </el-form-item>
+      <my-input v-model="form.password" type="password" label="密码"></my-input>
 
-      <el-form-item>
-        <el-input v-model="form.password" placeholder="密码" type="password"></el-input>
-      </el-form-item>
+      <my-button @click="login" class="pull-right" type="primary">登录</my-button>
 
-      <el-form-item>
-        <el-button @click="login" class="pull-right">登录</el-button>
-      </el-form-item>
-
-    </el-form>
+    </div>
 
   </div>
 </template>
@@ -32,9 +22,6 @@ import { mapActions } from 'vuex'
   methods: { ...mapActions(['login_todo']) }
 })
 export default class MyLogin extends Vue {
-  // style config
-  labelPosition = 'right'
-  // data
   form = {
     username: '',
     password: '',
@@ -52,6 +39,8 @@ export default class MyLogin extends Vue {
 <style scoped>
 .my-login {
   width: var(--min-size);
+}
+.my-title {
   text-align: center;
 }
 </style>
