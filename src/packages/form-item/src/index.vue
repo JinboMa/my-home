@@ -38,3 +38,12 @@ export default class MyFormItem extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.label {
+  font-weight: normal;
+  font-size: var(--font-size);
+  color: var(--color);
+}
+</style>
+

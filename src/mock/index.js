@@ -19,9 +19,10 @@ export default function () {
       {
         'id|+1': 1,
         title: '@cword(5,10)',
+        img: Mock.Random.dataImage('200x200', 'Test imgs!!!'),
         author: '@cname',
         authorId: '@id',
-        description: '@cparagraph(1,2)',
+        description: '@cparagraph(15,20)',
         createTime: '@datetime(yyyy-MM-dd HH:mm:ss)',
         changeTime: '@datetime(yyyy-MM-dd HH:mm:ss)',
         'groups|1-3': [
@@ -40,7 +41,8 @@ export default function () {
     result: true,
     data: {
       title: '@cword(5,10)',
-      content: '@cparagraph(4,8)'
+      content: '@cparagraph(100,200)',
+      img: Mock.Random.dataImage('600x200', 'Test imgs!!!')
     }
   })
 }

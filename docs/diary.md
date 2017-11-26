@@ -174,3 +174,23 @@ export default function importFile (callback) {
   addScript(files, 0, callback)
 }
 ```
+
+# 2017.11.26
+
+1. css Single line and multi line beyond concealment
+
+```css
+/* single line */
+.test {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+/* muti line */
+{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+```
