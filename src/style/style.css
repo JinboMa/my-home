@@ -7,8 +7,7 @@
 }
 
 html {
-  overflow: auto;
-  min-width: var(--max-width);
+  overflow: hidden;
 }
 
 a {
@@ -39,6 +38,7 @@ a {
   max-width: var(--max-size);
   min-width: var(--min-size);
   margin: var(--size) auto;
+  overflow: hidden;
 }
 
 .pull-right {
