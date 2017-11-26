@@ -1,6 +1,14 @@
 <template>
-  <div :class="classNames" @click="handleClick">
-    <slot></slot>
+  <div :class="classNames">
+
+    <label class="label" v-if="label">{{ label }}</label>
+
+    <div class="control">
+
+      <slot></slot>
+
+    </div>
+
   </div>
 </template>
 
@@ -12,11 +20,15 @@ import { Vue, Component } from '@/utils/vue-class'
     types: {
       type: Array,
       default: () => []
+    },
+    label: {
+      type: String,
+      default: ''
     }
   }
 })
-export default class MyButton extends Vue {
-  baseClassNames = ['button']
+export default class MyFormItem extends Vue {
+  baseClassNames = ['field']
 
   get classNames () {
     return [
@@ -24,7 +36,5 @@ export default class MyButton extends Vue {
       ...this.types.map(type => 'is-' + type)
     ]
   }
-
-  handleClick () { this.$emit('click') }
 }
 </script>

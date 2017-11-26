@@ -1,6 +1,6 @@
 <template>
   <div class="test">
-    test
+    <my-button disabled type="primary" loading>test</my-button>
   </div>
 </template>
 

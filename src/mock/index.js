@@ -33,4 +33,14 @@ export default function () {
       }
     ]
   })
+
+  Mock.mock(/blog\?blog_id=/, 'get', {
+    message: 'get blogs success',
+    code: 'SUCCESS',
+    result: true,
+    data: {
+      title: '@cword(5,10)',
+      content: '@cparagraph(4,8)'
+    }
+  })
 }

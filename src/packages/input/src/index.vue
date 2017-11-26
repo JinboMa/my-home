@@ -1,14 +1,21 @@
 <template>
-  <div class="field">
+  <div :class="classNames">
 
-    <label class="label" v-if="label">{{ label }}</label>
+    <input
+      v-if="type === 'password'"
+      key="password"
+      :class="inputClassNames"
+      v-model="inputValue"
+      :placeholder="placeholder"
+      type="password">
 
-    <div class="control">
-
-      <input v-if="type === 'password'" :class="classNames" v-model="inputValue" :placeholder="placeholder" type="password">
-      <input v-else :class="classNames" v-model="inputValue" :placeholder="placeholder" type="text">
-
-    </div>
+    <input
+      v-else
+      key="text"
+      :class="inputClassNames"
+      v-model="inputValue"
+      :placeholder="placeholder"
+      type="text">
 
   </div>
 </template>
@@ -18,9 +25,17 @@ import { Vue, Component } from '@/utils/vue-class'
 
 @Component({
   props: {
-    size: {
+    type: {
       type: String,
-      default: ''
+      default: 'text'
+    },
+    types: {
+      type: Array,
+      default: () => []
+    },
+    inputTypes: {
+      type: Array,
+      default: () => []
     },
     placeholder: {
       type: String | Number,
@@ -29,33 +44,30 @@ import { Vue, Component } from '@/utils/vue-class'
     value: {
       type: String | Number,
       default: ''
-    },
-    type: {
-      type: String,
-      default: 'text'
-    },
-    label: {
-      type: String,
-      default: ''
     }
   },
   watch: {
+    'value' (val) { this.inputValue = val },
     'inputValue' (val) { this.$emit('input', val) }
   }
 })
 export default class MyInput extends Vue {
-  baseClassNames = ['my-input', 'input']
+  baseClassNames = []
+  baseInputClassNames = ['input']
   inputValue = this.value
 
   get classNames () {
     return [
       ...this.baseClassNames,
-      this.size && 'is-' + this.size
+      ...this.types.map(type => 'is-' + type)
+    ]
+  }
+
+  get inputClassNames () {
+    return [
+      ...this.baseInputClassNames,
+      ...this.inputTypes.map(type => 'is-' + type)
     ]
   }
 }
 </script>
-
-<style scoped>
-
-</style>

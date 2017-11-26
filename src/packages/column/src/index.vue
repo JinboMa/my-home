@@ -1,5 +1,5 @@
 <template>
-  <div :class="classNames" @click="handleClick">
+  <div :class="classNames">
     <slot></slot>
   </div>
 </template>
@@ -15,8 +15,8 @@ import { Vue, Component } from '@/utils/vue-class'
     }
   }
 })
-export default class MyButton extends Vue {
-  baseClassNames = ['button']
+export default class MyColumn extends Vue {
+  baseClassNames = ['column']
 
   get classNames () {
     return [
@@ -24,7 +24,5 @@ export default class MyButton extends Vue {
       ...this.types.map(type => 'is-' + type)
     ]
   }
-
-  handleClick () { this.$emit('click') }
 }
 </script>

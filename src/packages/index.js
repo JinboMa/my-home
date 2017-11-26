@@ -1,11 +1,17 @@
 import input from './input'
 import textarea from './textarea'
 import button from './button'
+import column from './column'
+import columns from './columns'
+import formItem from './form-item'
 
 let components = [
   input,
   button,
-  textarea
+  textarea,
+  column,
+  columns,
+  formItem
 ]
 
 const install = function (Vue, opt) {
@@ -15,6 +21,6 @@ const install = function (Vue, opt) {
 }
 
 export default {
-  input,
-  install
+  install,
+  ...components
 }

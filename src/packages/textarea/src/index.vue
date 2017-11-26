@@ -1,13 +1,5 @@
 <template>
-  <div class="field">
-
-    <div class="control">
-
-      <textarea :class="classNames" v-model="inputValue" :placeholder="placeholder" :rows="rows"></textarea>
-
-    </div>
-
-  </div>
+  <textarea :class="classNames" v-model="inputValue" :placeholder="placeholder" :rows="rows"></textarea>
 </template>
 
 <script>
@@ -15,9 +7,9 @@ import { Vue, Component } from '@/utils/vue-class'
 
 @Component({
   props: {
-    size: {
-      type: String,
-      default: ''
+    types: {
+      type: Array,
+      default: () => []
     },
     placeholder: {
       type: String | Number,
@@ -33,22 +25,19 @@ import { Vue, Component } from '@/utils/vue-class'
     }
   },
   watch: {
+    'value' (val) { this.inputValue = val },
     'inputValue' (val) { this.$emit('input', val) }
   }
 })
 export default class MyTextarea extends Vue {
-  baseClassNames = ['my-textarea', 'textarea']
+  baseClassNames = ['textarea']
   inputValue = this.value
 
   get classNames () {
     return [
       ...this.baseClassNames,
-      this.size && 'is-' + this.size
+      ...this.types.map(type => 'is-' + type)
     ]
   }
 }
 </script>
-
-<style scoped>
-
-</style>
