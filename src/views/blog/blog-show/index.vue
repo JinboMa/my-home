@@ -1,11 +1,11 @@
 <template>
-  <div class="blog-show">
+  <div class="blog-show my-content">
 
-    <h1 class="blog-title">{{ blog.title }}</h1>
+    <h1 class="blog-title is-size-4">{{ blog.title }}</h1>
 
     <div class="blog-content">{{ blog.content }}</div>
 
-    <button @click="toEditBlog">编辑</button>
+    <my-button @click="toEditBlog" :types="['small', 'pulled-right', 'primary']">编辑</my-button>
 
   </div>
 </template>

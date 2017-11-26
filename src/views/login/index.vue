@@ -3,11 +3,15 @@
 
     <div>
 
-      <my-input v-model="form.username" label="用户名"></my-input>
+      <my-form-item label="用户名">
+        <my-input v-model="form.username"></my-input>
+      </my-form-item>
 
-      <my-input v-model="form.password" type="password" label="密码"></my-input>
+      <my-form-item label="密码">
+        <my-input v-model="form.password" type="password"></my-input>
+      </my-form-item>
 
-      <my-button @click="login" class="pull-right" type="primary">登录</my-button>
+      <my-button @click="login" :types="['primary', 'pulled-right']">登录</my-button>
 
     </div>
 

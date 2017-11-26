@@ -1,13 +1,31 @@
 <template>
-  <div class="blog-edit">
+  <div class="blog-edit my-content">
 
-    <div class="blog-add-tip">修改博客：</div>
+    <my-form-item>
+      <div>修改博客：</div>
+    </my-form-item>
 
-    <input type="text" class="blog-title" v-model="blog.title" placeholder="标题">
+    <my-form-item>
+      <my-input
+        type="text"
+        class="blog-title"
+        v-model="blog.title"
+        placeholder="标题"
+      />
+    </my-form-item>
 
-    <textarea type="text" class="blog-content" v-model="blog.content" placeholder="正文..."></textarea>
+    <my-form-item>
+      <my-textarea
+        type="text"
+        class="blog-content"
+        v-model="blog.content"
+        placeholder="正文..."
+        :rows="10"
+      />
+    </my-form-item>
 
-    <input type="button" @click="editBlog" value="提交">
+
+    <my-button :types="['pulled-right', 'primary']" @click="editBlog">提交</my-button>
 
   </div>
 </template>

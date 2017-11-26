@@ -3,8 +3,9 @@
 
     <div class="my-card">
 
-      <my-button class="pull-right" @click="getBlogs(searchWord)" size="small">搜索</my-button>
-      <my-input class="search-blog pull-right" v-model="searchWord" size="small"></my-input>
+      <my-button @click="getBlogs(searchWord)" :types="['small', 'pulled-right', 'primary']">搜索</my-button>
+
+      <my-input class="search-blog" v-model="searchWord" :types="['pulled-right']" :input-types="['small']" />
 
     </div>
 

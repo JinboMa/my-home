@@ -1,13 +1,32 @@
 <template>
   <div class="blog-add my-content">
 
-    <div class="is-size-4">添加博客：</div>
+    <my-form-item>
+      <div>添加博客：</div>
+    </my-form-item>
 
-    <my-input type="text" class="blog-title" v-model="form.title" placeholder="标题"></my-input>
+    <my-form-item>
+      <my-input
+        type="text"
+        class="blog-title"
+        v-model="form.title"
+        placeholder="标题"
+      />
+    </my-form-item>
 
-    <my-textarea type="text" class="blog-content" v-model="form.content" placeholder="正文..." :rows="10"></my-textarea>
+    <my-form-item>
+      <my-textarea
+        type="text"
+        class="blog-content"
+        v-model="form.content"
+        placeholder="正文..."
+        :rows="10"
+      />
+    </my-form-item>
 
-    <my-button type="button pull-right" @click="addBlog">提交</my-button>
+    <my-form-item>
+      <my-button :types="['pulled-right', 'primary']" @click="addBlog">提交</my-button>
+    </my-form-item>
 
   </div>
 </template>
