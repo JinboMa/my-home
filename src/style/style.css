@@ -49,7 +49,7 @@ a {
   float: left;
 }
 
-.link-text:hover {
+.link:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -65,4 +65,8 @@ a {
 
 .my-paragraph {
   text-indent: calc(var(--font-size)*2);
+}
+
+.circle {
+  border-radius: 50%;
 }

@@ -13,32 +13,29 @@ import { Vue, Component } from '@/utils/vue-class'
       type: Array,
       default: () => []
     },
-    center: {
-      type: Boolean,
-      default: false
+    size: {
+      type: String | Number,
+      default: 4
     }
   }
 })
-export default class MyColumns extends Vue {
-  baseClassNames = ['columns']
+export default class MyTitle extends Vue {
+  baseClassNames = ['title']
 
   get classNames () {
     return [
       ...this.baseClassNames,
       ...this.types.map(type => 'is-' + type),
-      this.center ? 'is-center' : ''
+      'is-' + this.size
     ]
   }
 }
 </script>
 
 <style scoped>
-.columns {
-  margin-top: 0;
-}
-
-.is-center {
-  align-items: center;
+.title {
+  color: var(--font-color);
+  margin: var(--size) 0;
 }
 </style>
 

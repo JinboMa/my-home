@@ -4,6 +4,7 @@ import button from './button'
 import column from './column'
 import columns from './columns'
 import formItem from './form-item'
+import title from './title'
 
 let components = [
   input,
@@ -11,7 +12,8 @@ let components = [
   textarea,
   column,
   columns,
-  formItem
+  formItem,
+  title
 ]
 
 const install = function (Vue, opt) {
