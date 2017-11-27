@@ -21,6 +21,7 @@ export default function () {
         title: '@cword(5,10)',
         img: Mock.Random.dataImage('200x200', 'Test imgs!!!'),
         author: '@cname',
+        avatar: Mock.Random.dataImage('100x100', '头像'),
         authorId: '@id',
         description: '@cparagraph(15,20)',
         createTime: '@datetime(yyyy-MM-dd HH:mm:ss)',
@@ -42,7 +43,10 @@ export default function () {
     data: {
       title: '@cword(5,10)',
       content: '@cparagraph(100,200)',
-      img: Mock.Random.dataImage('600x200', 'Test imgs!!!')
+      img: Mock.Random.dataImage('600x200', 'Test imgs!!!'),
+      author: '@cname',
+      avatar: Mock.Random.dataImage('100x100', '头像'),
+      authorId: '@id'
     }
   })
 }
