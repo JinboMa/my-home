@@ -1,9 +1,11 @@
 <template>
   <div class="blog-show my-content">
 
-    <img :src="blog.img" :alt="blog.title" class="blog-img">
+    <my-title class="blog-title" size="3">{{ blog.title }}</my-title>
 
-    <h1 class="blog-title is-size-4">{{ blog.title }}</h1>
+    <my-user-show :user="userData"></my-user-show>
+
+    <img :src="blog.img" :alt="blog.title" class="blog-img">
 
     <div class="blog-content my-paragraph">{{ blog.content }}</div>
 
@@ -14,14 +16,26 @@
 
 <script>
 import { Vue, Component } from '@/utils/vue-class'
+import MyUserShow from '@/components/MyUserShow'
 
 @Component({
+  components: { MyUserShow },
   props: {
     blogId: null
   }
 })
 export default class BlogShow extends Vue {
   blog = {}
+
+  get userData () {
+    let blog = this.blog
+    return {
+      id: blog.authorId,
+      name: blog.author,
+      avatar: blog.avatar,
+      changeTime: blog.changeTime
+    }
+  }
 
   created () {
     this.initData()

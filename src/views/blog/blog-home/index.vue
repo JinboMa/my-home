@@ -13,13 +13,9 @@
 
       <my-column :types="['9']">
 
-        <a class="blog-author" @click.stop="toUser(blog.authorId)" type="text">{{ blog.author }}</a>
+        <my-user-show :user="toUserData(blog)"></my-user-show>
 
-        <span class="blog-changeTime">{{ blog.changeTime }}</span>
-
-        <h1 class="is-size-4 link-text" @click="toBlogShow(blog.id)">{{ blog.title }}</h1>
-
-        <!-- <span class="blog-createTime">{{ blog.createTime }}</span> -->
+        <my-title class="link" @click.native="toBlogShow(blog.id)">{{ blog.title }}</my-title>
 
         <div class="blog-description my-paragraph">{{ blog.description }}</div>
 
@@ -29,7 +25,6 @@
         <img :src="blog.img" :alt="blog.title" class="blog-img" @click="toBlogShow(blog.id)">
       </my-column>
 
-
     </my-columns>
 
   </div>
@@ -37,8 +32,11 @@
 
 <script>
 import { Vue, Component } from '@/utils/vue-class'
+import MyUserShow from '@/components/MyUserShow'
 
-@Component
+@Component({
+  components: { MyUserShow }
+})
 export default class BlogHome extends Vue {
   blogList = []
   searchWord = null
@@ -51,12 +49,17 @@ export default class BlogHome extends Vue {
     })
   }
 
-  toBlogShow (id) {
-    this.$router.push(`/blog/${id}`)
+  toUserData (blog) {
+    return {
+      id: blog.authorId,
+      name: blog.author,
+      avatar: blog.avatar,
+      changeTime: blog.changeTime
+    }
   }
 
-  toUser (id) {
-    this.$router.push(`/user/${id}`)
+  toBlogShow (id) {
+    this.$router.push(`/blog/${id}`)
   }
 
   created () {
@@ -81,11 +84,6 @@ export default class BlogHome extends Vue {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
-}
-
-.blog-createTime,
-.blog-changeTime {
-  color: var(--gray);
 }
 
 .blog-img {
