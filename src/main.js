@@ -10,6 +10,7 @@ import './style/var.css'
 import 'bulma/css/bulma.css'
 import './style/style.css'
 import './style/keyframes.css'
+import './style/font/font-awesome.css'
 
 Vue.use(packages)
 // if node environment is development, and add the mock data.
