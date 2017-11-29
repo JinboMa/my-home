@@ -6,24 +6,12 @@
     </my-form-item>
 
     <my-form-item>
-      <my-input
-        type="text"
-        class="blog-title"
-        v-model="blog.title"
-        placeholder="标题"
-      />
+      <my-input type="text" class="blog-title" v-model="blog.title" placeholder="标题" />
     </my-form-item>
 
     <my-form-item>
-      <my-textarea
-        type="text"
-        class="blog-content"
-        v-model="blog.content"
-        placeholder="正文..."
-        :rows="10"
-      />
+      <my-textarea type="text" class="blog-content" v-model="blog.content" placeholder="正文..." :rows="10" />
     </my-form-item>
-
 
     <my-button :types="['pulled-right', 'primary']" @click="editBlog">提交</my-button>
 

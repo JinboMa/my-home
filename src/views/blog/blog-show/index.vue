@@ -3,7 +3,7 @@
 
     <my-title class="blog-title" size="3">{{ blog.title }}</my-title>
 
-    <my-user-show :user="userData"></my-user-show>
+    <my-user-show :user="userData" class="user-info"></my-user-show>
 
     <img :src="blog.img" :alt="blog.title" class="blog-img">
 
@@ -57,5 +57,9 @@ export default class BlogShow extends Vue {
 .blog-img {
   width: 100%;
   height: calc(var(--size)*20);
+}
+
+.user-info {
+  margin-top: var(--size);
 }
 </style>

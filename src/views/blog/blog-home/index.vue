@@ -3,21 +3,38 @@
 
     <div class="my-card">
 
-      <my-button @click="getBlogs(searchWord)" :types="['small', 'pulled-right', 'primary']">搜索</my-button>
+      <my-columns :types="['pulled-right']" class="search-blog" :space="false">
 
-      <my-input class="search-blog" v-model="searchWord" :types="['pulled-right']" :input-types="['small']" />
+        <my-column :types="['11']">
+          <my-input v-model="searchWord" :input-types="['small']" />
+        </my-column>
+
+        <my-column>
+          <my-button @click="getBlogs(searchWord)" :types="['small', 'white', 'pulled-right']">
+            <my-icon icon="search"></my-icon>
+          </my-button>
+        </my-column>
+
+      </my-columns>
 
     </div>
 
     <my-columns class="blog-item my-card" v-for="blog in blogList" :key="blog.id">
 
-      <my-column :types="['9']">
+      <my-column :types="['8']">
 
         <my-user-show :user="toUserData(blog)"></my-user-show>
 
         <my-title class="link" @click.native="toBlogShow(blog.id)">{{ blog.title }}</my-title>
 
-        <div class="blog-description my-paragraph">{{ blog.description }}</div>
+        <div class="blog-description">{{ blog.description }}</div>
+
+        <my-column class="comments">
+          <my-icon icon="envelope"></my-icon>
+          <span class="small link">{{ blog.comments }}</span>
+          <my-icon icon="heart"></my-icon>
+          <span class="small link">{{ blog.likes }}</span>
+        </my-column>
 
       </my-column>
 
@@ -69,20 +86,19 @@ export default class BlogHome extends Vue {
 </script>
 
 <style scoped>
+.search-blog {
+  width: var(--input-width);
+}
+
 .blog-item {
   margin: calc(var(--size)*2) 0;
   transition: box-shadow 0.8s;
 }
 
-.search-blog {
-  width: var(--input-width);
-  margin-right: var(--size);
-}
-
 .blog-description {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   overflow: hidden;
 }
 
@@ -90,5 +106,11 @@ export default class BlogHome extends Vue {
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+
+.comments {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 </style>
