@@ -194,3 +194,23 @@ export default function importFile (callback) {
   overflow: hidden;
 }
 ```
+
+# 2017.11.29
+
+1. js trigger change event
+
+```javascript
+trigger (elem, event) {
+  let evt = document.createEvent('HtmlEvents') // 还有onchange则是HtmlEvents,Events
+  evt.initEvent(event, true, true)
+  elem.dispatchEvent(evt)
+}
+trigger(El, 'change')
+```
+
+2. js get iframe's window
+
+```javascript
+let iframe = document.querySelector('iframe')
+iframe.contentWindow
+```
