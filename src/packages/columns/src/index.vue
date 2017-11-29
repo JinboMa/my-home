@@ -16,6 +16,10 @@ import { Vue, Component } from '@/utils/vue-class'
     center: {
       type: Boolean,
       default: false
+    },
+    space: {
+      type: Boolean,
+      default: true
     }
   }
 })
@@ -26,6 +30,7 @@ export default class MyColumns extends Vue {
     return [
       ...this.baseClassNames,
       ...this.types.map(type => 'is-' + type),
+      this.space ? '' : 'is-gapless',
       this.center ? 'is-center' : ''
     ]
   }
@@ -33,10 +38,6 @@ export default class MyColumns extends Vue {
 </script>
 
 <style scoped>
-.columns {
-  margin-top: 0;
-}
-
 .is-center {
   align-items: center;
 }

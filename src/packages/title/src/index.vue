@@ -15,7 +15,7 @@ import { Vue, Component } from '@/utils/vue-class'
     },
     size: {
       type: String | Number,
-      default: 4
+      default: 5
     }
   }
 })

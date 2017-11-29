@@ -1,5 +1,5 @@
 <template>
-  <my-columns center>
+  <my-columns center :space="false" class="user-show">
 
     <img :src="user.avatar" :alt="user.name" class="circle avatar" @click.stop="toUser(user.id)">
 
@@ -32,8 +32,7 @@ export default class MyUserShow extends Vue {
 
 <style scoped>
 .avatar {
-  width: calc(var(--size)*2.5);
-  margin-left: var(--size);
+  width: calc(var(--size)*2);
 }
 
 .author {
@@ -42,5 +41,9 @@ export default class MyUserShow extends Vue {
 
 .blog-changeTime {
   color: var(--gray);
+}
+
+.columns.user-show {
+  margin-bottom: var(--size);
 }
 </style>

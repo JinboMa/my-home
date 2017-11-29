@@ -6,6 +6,7 @@ import columns from './columns'
 import formItem from './form-item'
 import title from './title'
 import editor from './editor'
+import icon from './icon'
 
 let components = [
   input,
@@ -15,7 +16,8 @@ let components = [
   columns,
   formItem,
   title,
-  editor
+  editor,
+  icon
 ]
 
 const install = function (Vue, opt) {

@@ -8,11 +8,12 @@
   --bg-color: #f3f3f3;
   /* size */
   --size: 12px;
+  --small-size: 14px;
   --scroll-width: 6px;
   --max-size: 700px;
   --min-size: 300px;
   --title-size: 18px;
   --big-size: 28px;
-  --font-size: 14px;
-  --input-width: 300px;
+  --font-size: 15px;
+  --input-width: 280px;
 }

@@ -26,6 +26,8 @@ export default function () {
         description: '@cparagraph(15,20)',
         createTime: '@datetime(yyyy-MM-dd HH:mm:ss)',
         changeTime: '@datetime(yyyy-MM-dd HH:mm:ss)',
+        'likes|0-300': 1,
+        'comments|0-300': 1,
         'groups|1-3': [
           {
             'id|+1': 1,
