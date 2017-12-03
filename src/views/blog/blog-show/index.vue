@@ -2,13 +2,9 @@
   <div class="blog-show my-content">
 
     <my-title class="blog-title" size="3">{{ blog.title }}</my-title>
-
     <my-user-show :user="userData" class="user-info"></my-user-show>
-
     <img :src="blog.img" :alt="blog.title" class="blog-img">
-
-    <div class="blog-content my-paragraph">{{ blog.content }}</div>
-
+    <my-content :indent="true">{{ blog.content }}</my-content>
     <my-button @click="toEditBlog" :types="['small', 'pulled-right', 'primary']">编辑</my-button>
 
   </div>

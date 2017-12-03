@@ -21,13 +21,13 @@
 
     <my-columns class="blog-item my-card" v-for="blog in blogList" :key="blog.id">
 
-      <my-column :types="['8']">
+      <my-column :types="['9']">
 
         <my-user-show :user="toUserData(blog)"></my-user-show>
 
         <my-title class="link" @click.native="toBlogShow(blog.id)">{{ blog.title }}</my-title>
 
-        <div class="blog-description">{{ blog.description }}</div>
+        <my-content line="3">{{ blog.description }}</my-content>
 
         <my-column class="comments">
           <my-icon icon="envelope"></my-icon>
@@ -93,13 +93,6 @@ export default class BlogHome extends Vue {
 .blog-item {
   margin: calc(var(--size)*2) 0;
   transition: box-shadow 0.8s;
-}
-
-.blog-description {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  overflow: hidden;
 }
 
 .blog-img {
