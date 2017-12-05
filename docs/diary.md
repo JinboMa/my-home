@@ -217,4 +217,16 @@ iframe.contentWindow
 
 # 2017.12.03
 
-# 2017.12.04
+# 2017.12.05
+
+1. when you use async function, you can handle error with try
+
+```javascript
+async function test () {
+  try {
+    let res = await getTests()
+  } catch (err) {
+    console.log(err)
+  }
+}
+```
