@@ -44,6 +44,6 @@ export default class MyUserShow extends Vue {
 }
 
 .columns.user-show {
-  margin-bottom: var(--size);
+  margin-bottom: calc(var(--size)*0.5);
 }
 </style>
