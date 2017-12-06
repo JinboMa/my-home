@@ -230,3 +230,14 @@ async function test () {
   }
 }
 ```
+
+# 2017.12.06
+
+1. Binary conversion decimal & Decimal conversion binary
+
+```javascript
+let a = 100
+a.toString(2) // "1100100"
+
+parseInt('1100100', 2) // 100
+```
