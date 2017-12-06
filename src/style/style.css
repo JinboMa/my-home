@@ -49,8 +49,11 @@ a {
   float: left;
 }
 
-.link:hover {
+.link {
   cursor: pointer;
+}
+
+.link:hover {
   text-decoration: underline;
 }
 
