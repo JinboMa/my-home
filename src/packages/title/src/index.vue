@@ -35,7 +35,7 @@ export default class MyTitle extends Vue {
 <style scoped>
 .title {
   color: var(--font-color);
-  margin: var(--size) 0;
+  margin: calc(var(--size)*0.5) 0;
 }
 </style>
 

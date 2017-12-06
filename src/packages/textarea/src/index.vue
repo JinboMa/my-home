@@ -1,5 +1,5 @@
 <template>
-  <textarea :class="classNames" v-model="inputValue" :placeholder="placeholder" :rows="rows"></textarea>
+  <textarea :class="classNames" v-model="inputValue" :placeholder="placeholder" :rows="rows" :disabled="disabled"></textarea>
 </template>
 
 <script>
@@ -22,6 +22,10 @@ import { Vue, Component } from '@/utils/vue-class'
     rows: {
       type: String | Number,
       default: 4
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   watch: {
@@ -41,3 +45,13 @@ export default class MyTextarea extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.textarea {
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-top: calc(0.375em - 1px);
+}
+</style>
+

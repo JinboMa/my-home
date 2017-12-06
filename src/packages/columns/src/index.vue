@@ -38,6 +38,10 @@ export default class MyColumns extends Vue {
 </script>
 
 <style scoped>
+.columns {
+  width: 100%;
+}
+
 .is-center {
   align-items: center;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div :class="classNames" @click="handleClick">
+  <div :class="classNames" @click="handleClick" :disabled="disabled">
     <slot></slot>
   </div>
 </template>
@@ -12,6 +12,10 @@ import { Vue, Component } from '@/utils/vue-class'
     types: {
       type: Array,
       default: () => []
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   }
 })
