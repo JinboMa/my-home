@@ -51,4 +51,22 @@ export default function () {
       authorId: '@id'
     }
   })
+
+  Mock.mock(/blog\/comment\/\d+$/, 'get', {
+    message: 'get blogs success',
+    code: 'SUCCESS',
+    result: true,
+    'data|5-20': [
+      {
+        'id|+1': 1,
+        title: '@cword(5,10)',
+        img: Mock.Random.dataImage('200x200', 'Test imgs!!!'),
+        author: '@cname',
+        avatar: Mock.Random.dataImage('100x100', '头像'),
+        authorId: '@id',
+        content: '@cparagraph(1,2)',
+        createTime: '@datetime(yyyy-MM-dd HH:mm:ss)'
+      }
+    ]
+  })
 }
