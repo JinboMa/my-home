@@ -1,10 +1,17 @@
 <template>
   <div class="blog-show my-content">
 
-    <my-title class="blog-title" size="3">{{ blog.title }}</my-title>
-    <my-user-show :user="userData" class="user-info"></my-user-show>
-    <img :src="blog.img" :alt="blog.title" class="blog-img">
-    <my-content :indent="true">{{ blog.content }}</my-content>
+    <div class="my-card">
+      <my-title class="blog-title" size="4">{{ blog.title }}</my-title>
+      <my-user-show :user="userData" class="user-info"></my-user-show>
+    </div>
+    <div class="my-card">
+      <img :src="blog.img" :alt="blog.title" class="blog-img">
+    </div>
+    <div class="my-card">
+      <my-content :indent="true">{{ blog.content }}</my-content>
+    </div>
+    <my-comment @submit="comment"></my-comment>
     <my-button @click="toEditBlog" :types="['small', 'pulled-right', 'primary']">编辑</my-button>
 
   </div>
@@ -13,9 +20,10 @@
 <script>
 import { Vue, Component } from '@/utils/vue-class'
 import MyUserShow from '@/components/MyUserShow'
+import MyComment from '@/components/MyComment'
 
 @Component({
-  components: { MyUserShow },
+  components: { MyUserShow, MyComment },
   props: {
     blogId: null
   }
@@ -43,8 +51,11 @@ export default class BlogShow extends Vue {
 
   toEditBlog () {
     let blogId = this.blogId
-
     this.$router.push(`/blog/${blogId}/edit`)
+  }
+
+  comment (text) {
+    // comment to do
   }
 }
 </script>
@@ -56,6 +67,6 @@ export default class BlogShow extends Vue {
 }
 
 .user-info {
-  margin-top: var(--size);
+  margin-top: calc(var(--size)*0.5);
 }
 </style>
