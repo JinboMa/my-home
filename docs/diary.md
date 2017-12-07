@@ -241,3 +241,13 @@ a.toString(2) // "1100100"
 
 parseInt('1100100', 2) // 100
 ```
+
+# 2017.12.07
+
+1. array sort function
+
+```javascript
+let a = [5, 3, 7, 1, 15]
+a.sort((i, j) => i > j)
+console.log(a) // [1, 3, 5, 7, 15]
+```
