@@ -1,19 +1,21 @@
 <template>
   <div class="my-login my-content">
 
-    <div>
+    <el-form label-width="80px">
 
-      <my-form-item label="用户名">
-        <my-input v-model="form.username"></my-input>
-      </my-form-item>
+      <el-form-item label="用户名">
+        <el-input v-model="form.username"></el-input>
+      </el-form-item>
 
-      <my-form-item label="密码">
-        <my-input v-model="form.password" type="password"></my-input>
-      </my-form-item>
+      <el-form-item label="密码">
+        <el-input v-model="form.password" type="password"></el-input>
+      </el-form-item>
 
-      <my-button @click="login" :types="['primary', 'pulled-right']">登录</my-button>
+      <el-form-item>
+        <el-button @click="login" class="pull-right">登录</el-button>
+      </el-form-item>
 
-    </div>
+    </el-form>
 
   </div>
 </template>

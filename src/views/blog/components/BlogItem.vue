@@ -1,28 +1,28 @@
 <template>
-  <my-columns class="blog-item my-card">
+  <el-row class="blog-item my-card" :gutter="10">
 
-    <my-column :types="['8']">
+    <el-col :span="16">
 
       <my-user-show :user="toUserData(blog)"></my-user-show>
 
-      <my-title class="link" @click.native="toBlogShow(blog.id)">{{ blog.title }}</my-title>
+      <div class="link h1" @click.native="toBlogShow(blog.id)">{{ blog.title }}</div>
 
-      <my-content line="4">{{ blog.description }}</my-content>
+      <my-content line="5">{{ blog.description }}</my-content>
 
-      <my-column class="comments">
+      <div class="pull-right">
         <my-icon icon="envelope"></my-icon>
         <span class="small link">{{ blog.comments }}</span>
         <my-icon icon="heart"></my-icon>
         <span class="small link">{{ blog.likes }}</span>
-      </my-column>
+      </div>
 
-    </my-column>
+    </el-col>
 
-    <my-column>
+    <el-col :span="8">
       <img :src="blog.img" :alt="blog.title" class="blog-img" @click="toBlogShow(blog.id)">
-    </my-column>
+    </el-col>
 
-  </my-columns>
+  </el-row>
 </template>
 
 <script>
@@ -68,9 +68,8 @@ export default class BlogItem extends Vue {
   cursor: pointer;
 }
 
-.comments {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.h1 {
+  font-size: 20px;
+  font-weight: normal;
 }
 </style>

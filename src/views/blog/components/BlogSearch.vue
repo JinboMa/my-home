@@ -1,20 +1,8 @@
 <template>
   <div class="my-card">
-    <my-columns :types="['pulled-right']" class="search-blog" :space="false">
-
-      <!-- search input -->
-      <my-column :types="['11']">
-        <my-input v-model="searchWord" :input-types="['small']" />
-      </my-column>
-
-      <!-- search button -->
-      <my-column>
-        <my-button @click="getBlogs(searchWord, option)" :types="['small', 'white', 'pulled-right']">
-          <my-icon icon="search"></my-icon>
-        </my-button>
-      </my-column>
-
-    </my-columns>
+    <el-input v-model="searchWord">
+      <el-button slot="append" icon="el-icon-search" @click="getBlogs(searchWord, option)"></el-button>
+    </el-input>
   </div>
 </template>
 
@@ -46,9 +34,3 @@ export default class BlogSearch extends Vue {
   }
 }
 </script>
-
-<style scoped>
-.search-blog {
-  width: var(--input-width);
-}
-</style>
