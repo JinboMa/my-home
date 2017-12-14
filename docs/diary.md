@@ -251,3 +251,26 @@ let a = [5, 3, 7, 1, 15]
 a.sort((i, j) => i > j)
 console.log(a) // [1, 3, 5, 7, 15]
 ```
+
+# 2017.12.14
+
+1. export excel
+
+```javascript
+/**
+ * tip: responseType: 'blob' !!!
+ * @params {Blob} blob
+ * @params {String} fileName
+ */
+function downFile (blob, fileName) {
+  if (window.navigator.msSaveOrOpenBlob) {
+    navigator.msSaveBlob(blob, fileName)
+  } else {
+    let link = document.createElement('a')
+    link.href = window.URL.createObjectURL(blob)
+    link.download = fileName
+    link.click()
+    window.URL.revokeObjectURL(link.href)
+  }
+}
+```
