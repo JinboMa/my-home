@@ -1,6 +1,6 @@
 <template>
   <footer class="my-footer" v-show="false">
-    this is footer.
+    this is footer. test.
   </footer>
 </template>
 
