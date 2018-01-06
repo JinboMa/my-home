@@ -8,11 +8,10 @@ import packages from './packages'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import css
+import './style/font/font-awesome.css'
 import './style/var.css'
-// import 'bulma/css/bulma.css'
 import './style/style.css'
 import './style/keyframes.css'
-import './style/font/font-awesome.css'
 
 Vue.use(ElementUI, { size: 'small' })
 Vue.use(packages)

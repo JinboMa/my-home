@@ -1,21 +1,14 @@
-<template>
-  <div class="blog-edit my-content">
-
-    <my-form-item>
-      <div>修改博客：</div>
-    </my-form-item>
-
-    <my-form-item>
-      <my-input type="text" class="blog-title" v-model="blog.title" placeholder="标题" />
-    </my-form-item>
-
-    <my-form-item>
-      <my-textarea type="text" class="blog-content" v-model="blog.content" placeholder="正文..." :rows="10" />
-    </my-form-item>
-
-    <my-button :types="['pulled-right', 'primary']" @click="editBlog">提交</my-button>
-
-  </div>
+<template lang="pug">
+my-form.blog-edit(:model="editForm", ref="editForm")
+  div(slot="prepend") 修改博客：
+  el-input(
+    slot="content",
+    slot-scope="{item}",
+    v-model="item",
+    placeholder="正文...",
+    :rows="10")
+  div(slot="append")
+    el-button.pull-right(@click="editBlog") 提交
 </template>
 
 <script>
@@ -45,7 +38,9 @@ export default class BlogEdit extends Vue {
   }
 
   async editBlog () {
-    await this.$api.editBlog(this.editForm)
+    let form = this.$refs['editForm'][0].submit()
+    if (!form) return
+    await this.$api.editBlog(form)
     alert('edit blog success')
     this.$router.push(`/blog/${this.blogId}`)
   }

@@ -1,15 +1,9 @@
-<template>
-  <div class="app">
-
-    <my-header/>
-
-    <my-main>
-      <router-view/>
-    </my-main>
-
-    <my-footer/>
-
-  </div>
+<template lang="pug">
+.app
+  my-header
+  my-main
+    router-view
+  my-footer
 </template>
 
 <script>
@@ -25,11 +19,9 @@ export default class App extends Vue {
 }
 </script>
 
-<style scoped>
-.app {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
+<style lang="stylus" scoped>
+.app
+  position relative
+  width 100%
+  height 100vh
 </style>
-

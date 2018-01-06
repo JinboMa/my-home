@@ -1,9 +1,10 @@
-<template>
-  <header class="my-header">
-    <router-link class="item" v-for="item in headers" :key="item.path" :to="item.path">
-      {{ item.name }}
-    </router-link>
-  </header>
+<template lang="pug">
+header.my-header
+  router-link.item(
+    v-for="item in headers",
+    :key="item.path",
+    :to="item.path"
+  ) {{ item.name }}
 </template>
 
 <script>

@@ -1,34 +1,23 @@
 <template>
-  <div class="blog-add my-content">
+  <el-form class="blog-add my-content">
 
-    <my-form-item>
+    <el-form-item>
       <div>添加博客：</div>
-    </my-form-item>
+    </el-form-item>
 
-    <my-form-item>
-      <my-input
-        type="text"
-        class="blog-title"
-        v-model="form.title"
-        placeholder="标题"
-      />
-    </my-form-item>
+    <el-form-item>
+      <my-input type="text" class="blog-title" v-model="form.title" placeholder="标题" />
+    </el-form-item>
 
-    <my-form-item>
-      <my-textarea
-        type="text"
-        class="blog-content"
-        v-model="form.content"
-        placeholder="正文..."
-        :rows="10"
-      />
-    </my-form-item>
+    <el-form-item>
+      <my-textarea type="text" class="blog-content" v-model="form.content" placeholder="正文..." :rows="10" />
+    </el-form-item>
 
-    <my-form-item>
+    <el-form-item>
       <my-button :types="['pulled-right', 'primary']" @click="addBlog">提交</my-button>
-    </my-form-item>
+    </el-form-item>
 
-  </div>
+  </el-form>
 </template>
 
 <script>
