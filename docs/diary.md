@@ -274,3 +274,78 @@ function downFile (blob, fileName) {
   }
 }
 ```
+
+# 2018.01.25
+
+1. div to middle
+
+```html
+<div class="outer">
+  <div class="inner"></div>
+</div>
+```
+
+```css
+/* base */
+.outer {
+  width: 300px;
+  height: 300px;
+  background-color: skyblue;
+}
+.inner {
+  width: 100px;
+  width: 100px;
+  background-color: red;
+}
+/* way1 */
+.inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+/* way2 */
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* way3 */
+.inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+```
+
+2. safe with cookie
+
+```javascript
+/**
+ *
+ * @param {name} cookie's name
+ * @param {value} cookie's value
+ * @param {expire} cookie's expire(time)
+ * @param {path} 规定 cookie 的服务器路径
+ * @param {domain} 规定 cookie 的域名
+ * @param {secure} 规定是否需要在安全的 HTTPS 连接来传输 cookie
+ */
+setcookie(name, value, expire, path, domain, secure)
+```
+
+- setCookie expire with js
+
+```javascript
+function SetCookie(name,value)
+{
+    var Days = 30 //此 cookie 将被保存 30 天
+    var exp = new Date()
+    exp.setTime(exp.getTime() + Days * 24 * 60 * 60 *1000)
+    document.cookie = name + "="+ escape(value) + ";expires=" + exp.toGMTString()
+}
+```
